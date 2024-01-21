@@ -1,7 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const contactRouter = require("./router/contactRouter");
+const contactRouter = require("../router/contactRouter");
+const serverless = require('serverless-http')
 
 var corsOptions = {
   //   origin: "*",
@@ -10,7 +11,7 @@ var corsOptions = {
   credentials: true,
 };
 app.use(cors(corsOptions));
-const errorMiddleware = require("./middleware/errors");
+const errorMiddleware = require("../middleware/errors");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -19,6 +20,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(errorMiddleware);
 
 //contact us router
-app.use("/", contactRouter);
+app.use("/.netlify/functions/app", contactRouter);
 
-module.exports = app;
+module.exports.handler =serverless(app);

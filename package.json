@@ -4,9 +4,8 @@
   "description": "syvar tech",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "SET NODE_ENV=DEVELOPMENT& nodemon -L server.js",
-    "prod": "SET NODE_ENV=PRODUCTION& nodemon -L server.js"
+   
+    "build" : "netlify deploy --prod"
   },
   "author": "Syvar Tech",
   "license": "ISC",
@@ -14,7 +13,8 @@
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "nodemailer": "^6.9.8"
+    "nodemailer": "^6.9.8",
+    "serverless-http": "^3.2.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"

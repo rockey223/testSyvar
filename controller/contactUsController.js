@@ -8,7 +8,7 @@ exports.sendContactUsEmail = catchAsyncErrors(async (req, res, next) => {
 
     const info = await transporter.sendMail({
         from: "jinaalchemycustomermessages@gmail.com",
-        to: "syvar.tech@gmail.com",
+        to: "rockeym50@gmail.com",
         subject: "From customer " + req.body.customerName,
         html: `
         <h2 style="font-size: 24px;">Customer Name: ${req.body.customerName}</h2>
